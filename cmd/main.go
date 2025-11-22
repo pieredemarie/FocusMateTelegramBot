@@ -41,6 +41,16 @@ func main() {
 		return nil
 	})
 
+	b.Handle("/pomodoro", func(c telebot.Context) error {
+        bot.HandlePomodoro(c, b)
+        return nil
+    })
+
+    b.Handle("/pomodorocancel", func(c telebot.Context) error {
+        bot.StopPomodoro(c, b)
+        return nil
+    })
+
     log.Println("Bot started...")
     b.Start()
 }

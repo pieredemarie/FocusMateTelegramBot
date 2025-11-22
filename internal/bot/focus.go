@@ -25,13 +25,14 @@ func StartFocus(chatID int64,msg string,bot *telebot.Bot) {
 		defer timer.Stop()
 
 		bot.Send(&chat, "Режим фокуса включён! Длительность: "+dur.String())
-
-		select {
-		case <-ticker.C:
-				bot.Send(&chat,"Не отвлекайся! Тебя ждут дела!")
-		case <- timer.C:
-			bot.Send(&chat, "✅ Время вышло! Отличная работа!")
-			return
+		for {
+			select {
+			case <-ticker.C:
+					bot.Send(&chat,"Не отвлекайся! Тебя ждут дела!")
+			case <- timer.C:
+				bot.Send(&chat, "✅ Время вышло! Отличная работа!")
+				return
+			}
 		}
 	}()
 }
