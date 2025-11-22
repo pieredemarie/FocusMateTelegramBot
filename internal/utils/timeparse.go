@@ -13,6 +13,10 @@ func ParseMessage(msg string) (string, time.Duration, error) {
 		return "",0, errors.New("unkown command")
 	}
 
+	if len(words) < 3 { 
+    	return "", 0, errors.New("add more information")
+	}
+
 	dur, err := ParseDuration(words[1])
 	if err != nil {
 		return "",0,err
