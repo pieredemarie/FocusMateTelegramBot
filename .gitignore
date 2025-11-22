@@ -1,0 +1,54 @@
+# Binaries for programs and plugins
+*.exe
+*.darwin
+*.linux
+*.windows
+*.freebsd
+*.netbsd
+*.openbsd
+*.solaris
+*.plan9
+*.android
+*.ios
+*.dragonfly
+*.illumos
+*.js
+*.wasm
+
+# Build output directories
+bin/
+pkg/
+
+# Dependency caches
+vendor/
+go.mod.bak
+go.sum.bak
+
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+*~
+.#*
+
+# Operating system temporary files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+core.*
+
+# Test results
+*.test
+*.out
+
+# Logs
+*.log
+
+# Environment variables
+.env
