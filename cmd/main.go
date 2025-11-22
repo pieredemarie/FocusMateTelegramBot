@@ -35,6 +35,11 @@ func main() {
 		bot.HandleRemind(c, b) 
 		return nil
 	})
+	
+	b.Handle("/focus", func(c telebot.Context) error {
+		bot.HandleFocus(c,b)
+		return nil
+	})
 
     log.Println("Bot started...")
     b.Start()

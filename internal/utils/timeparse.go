@@ -21,7 +21,7 @@ func ParseMessage(msg string) (string, time.Duration, error) {
 	text := ""
 
 	for i := 2;i < len(words);i++ {
-		text += words[i]
+		text = text + " " + words[i]
 	}
 
 	return text,dur,nil

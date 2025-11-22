@@ -41,7 +41,7 @@ func StartReminder(rem Reminder,bot *telebot.Bot) {
 		time.Sleep(rem.Duration)
 		
 		chat := &telebot.Chat{ID: int64(rem.ChatID)}
-		_, err := bot.Send(chat,"Напоминание!" + rem.Text)
+		_, err := bot.Send(chat,"Напоминание! " + rem.Text)
 		if err != nil {
 			fmt.Println(err)
 		}
